@@ -2,11 +2,11 @@
 import { UserIcon, PuzzlePieceIcon } from '@heroicons/vue/24/outline';
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
-import MainLayout from '../layouts/MainLayout.vue';
 import ContactForm from '../components/ContactForm.vue';
+import MainLayout from '../layouts/MainLayout.vue';
 
-const page = computed(() => usePage<PageProps>().props.value.page);
-const settings = computed(() => usePage<PageProps>().props.value.settings);
+const page = computed(() => usePage<PageProps>().props.page);
+const settings = computed(() => usePage<PageProps>().props.settings);
 
 interface MenuItem {
     id: number;
@@ -77,4 +77,11 @@ interface PageProps extends Record<string, any> {
     </main-layout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.home-hero {
+    background: url('/assets/img/hero_bg.jpg') center center no-repeat;
+    background-size: cover;
+    backdrop-filter: grayscale(100%);
+    text-shadow: 1px 1px #4b5563;
+}
+</style>

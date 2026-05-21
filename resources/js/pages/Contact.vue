@@ -4,7 +4,7 @@ import { Head, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import MainLayout from '../layouts/MainLayout.vue';
 
-const settings = computed(() => usePage<PageProps>().props.value.settings);
+const settings = computed(() => usePage<PageProps>().props.settings);
 
 interface Settings {
     page_title: string;

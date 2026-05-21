@@ -2,6 +2,7 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 import { Link, usePage } from '@inertiajs/vue3';
 import { computed, onMounted, ref } from 'vue';
+import { index } from '@/actions/App/Http/Controllers/UI/PagesController'
 
 import MenuDropdown from '../components/MenuDropdown.vue';
 import MenuDropdownLink from '../components/MenuDropdownLink.vue';
@@ -27,8 +28,6 @@ interface PageProps extends Record<string, any> {
     navigation: MenuItem[];
     settings: Settings;
 }
-
-declare function route(name: string, params?: Record<string, any>): string;
 
 const openNav = ref(false);
 const pathname = ref('');
@@ -71,7 +70,7 @@ onMounted(() => {
 
             <div class="flex items-center justify-end">
                 <Link
-                    :href="route('home')"
+                    :href="index()"
                     class="flex h-10 items-center justify-end sm:justify-start"
                 >
                     <img
@@ -132,9 +131,7 @@ onMounted(() => {
                                 <MenuDropdownLink
                                     v-for="item in menuItem.categories"
                                     :key="item.url"
-                                    :href="
-                                        route(menuItem.route) + '/' + item.url
-                                    "
+                                    :href="'/' + menuItem.route + '/' + item.url"
                                     as="button"
                                 >
                                     {{ item['name'] }}
@@ -185,7 +182,7 @@ onMounted(() => {
                         <MenuDropdownLink
                             v-for="item in menuItem.categories"
                             :key="item.url"
-                            :href="route(menuItem.route) + '/' + item.url"
+                            :href="'/' + menuItem.route + '/' + item.url"
                             as="button"
                             :mobile="true"
                         >

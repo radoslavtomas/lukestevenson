@@ -3,7 +3,7 @@ import { Head, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import MainLayout from '../layouts/MainLayout.vue';
 
-const page = computed(() => usePage<PageProps>().props.value.page);
+const page = computed(() => usePage<PageProps>().props.page);
 
 interface Page {
     title: string;

@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Navigation;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -42,6 +44,16 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user(),
             ],
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
+            'navigation' => function () {
+                return $this->getNavigationItems();
+            },
+            'settings' => function () {
+                return Setting::first();
+            }
         ];
+    }
+
+    private function getNavigationItems() {
+        return Navigation::with('categories')->orderBy('position')->get();
     }
 }

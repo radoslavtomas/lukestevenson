@@ -3,27 +3,20 @@ import { Head, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
 import NavigationBar from '../components/NavigationBar.vue';
 
-const settings = computed(() => usePage<PageProps>().props.value.settings);
-
-interface MenuItem {
-    id: number;
-    name: string;
-    route: string;
-    categories: Category[];
-}
-
-interface Category {
-    name: string;
-    url: string;
-}
+const settings = computed(() => usePage<PageProps>().props.settings);
 
 interface Settings {
+    page_description: string;
+    page_keywords: string;
     page_title: string;
     page_subtitle: string;
+    address_line1: string;
+    address_line2: string;
+    address_line3: string;
+    postcode: string;
 }
 
 interface PageProps extends Record<string, any> {
-    navigation: MenuItem[];
     settings: Settings;
 }
 </script>
@@ -64,7 +57,7 @@ interface PageProps extends Record<string, any> {
                 <p class="">{{ settings.address_line1 }}</p>
                 <p class="">{{ settings.address_line2 }}</p>
                 <p class="">{{ settings.address_line3 }}</p>
-                <p class="">{{ settings.postocde }}</p>
+                <p class="">{{ settings.postcode }}</p>
             </section>
         </div>
     </footer>
