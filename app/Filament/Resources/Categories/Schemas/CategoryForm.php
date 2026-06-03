@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Filament\Resources\Categories\Schemas;
+
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Schema;
+
+class CategoryForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextInput::make('name')
+                    ->required(),
+                TextInput::make('url')
+                    ->url()
+                    ->required(),
+                TextInput::make('position')
+                    ->required()
+                    ->numeric(),
+                Select::make('navigation_id')
+                    ->relationship('navigation', 'name')
+                    ->required(),
+                Select::make('page_id')
+                    ->relationship('page', 'name'),
+            ]);
+    }
+}
