@@ -5,7 +5,7 @@ require 'recipe/laravel.php';
 
 // Config
 set('repository', 'git@github.com:radoslavtomas/luke-therapy.git');
-set('keep_releases', 3);
+set('keep_releases', 2);
 set ('ssh_multiplexing', false);
 set('git_tty', false);
 
