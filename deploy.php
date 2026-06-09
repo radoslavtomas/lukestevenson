@@ -1,4 +1,5 @@
 <?php
+
 namespace Deployer;
 
 require 'recipe/laravel.php';
@@ -6,7 +7,7 @@ require 'recipe/laravel.php';
 // Config
 set('repository', 'git@github.com:radoslavtomas/lukestevenson.git');
 set('keep_releases', 2);
-set ('ssh_multiplexing', false);
+set('ssh_multiplexing', false);
 set('git_tty', false);
 
 add('shared_files', []);

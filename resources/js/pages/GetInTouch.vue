@@ -4,7 +4,6 @@ import { computed } from 'vue';
 import ContactForm from '../components/ContactForm.vue';
 import MainLayout from '../layouts/MainLayout.vue';
 
-
 const page = computed(() => usePage<PageProps>().props.page);
 
 interface Page {

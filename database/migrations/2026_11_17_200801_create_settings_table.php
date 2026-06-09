@@ -8,10 +8,9 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up(): void {
+    public function up(): void
+    {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('page_title');
@@ -31,10 +30,9 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down(): void {
+    public function down(): void
+    {
         Schema::dropIfExists('settings');
     }
 };

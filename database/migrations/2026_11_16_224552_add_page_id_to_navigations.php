@@ -8,10 +8,9 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up(): void {
+    public function up(): void
+    {
         Schema::table('navigations', function (Blueprint $table) {
             $table->integer('page_id')->after('position');
         });
@@ -19,10 +18,9 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down(): void {
+    public function down(): void
+    {
         Schema::table('navigations', function (Blueprint $table) {
             $table->dropColumn('page_id');
         });

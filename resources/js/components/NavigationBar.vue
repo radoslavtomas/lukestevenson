@@ -2,7 +2,7 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 import { Link, usePage } from '@inertiajs/vue3';
 import { computed, onMounted, ref } from 'vue';
-import { index } from '@/actions/App/Http/Controllers/UI/PagesController'
+import { index } from '@/actions/App/Http/Controllers/UI/PagesController';
 
 import MenuDropdown from '../components/MenuDropdown.vue';
 import MenuDropdownLink from '../components/MenuDropdownLink.vue';
@@ -131,7 +131,9 @@ onMounted(() => {
                                 <MenuDropdownLink
                                     v-for="item in menuItem.categories"
                                     :key="item.url"
-                                    :href="'/' + menuItem.route + '/' + item.url"
+                                    :href="
+                                        '/' + menuItem.route + '/' + item.url
+                                    "
                                     as="button"
                                 >
                                     {{ item['name'] }}

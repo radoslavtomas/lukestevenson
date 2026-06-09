@@ -7,8 +7,8 @@ use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Notifications\Notification;
 use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Hash;
@@ -46,14 +46,14 @@ class UsersTable
                             ->label('Confirm new password')
                             ->required()
                             ->same('new_password')
-                            ->rule(Password::default())
+                            ->rule(Password::default()),
                     ])
                     ->action(function (User $record, array $data) {
                         $record->update([
-                            'password' => Hash::make($data['new_password'])
+                            'password' => Hash::make($data['new_password']),
                         ]);
                         Notification::make()->success()->title('Password updated successfully')->send();
-                    })
+                    }),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

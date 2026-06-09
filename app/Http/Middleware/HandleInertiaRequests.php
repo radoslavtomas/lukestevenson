@@ -49,11 +49,12 @@ class HandleInertiaRequests extends Middleware
             },
             'settings' => function () {
                 return Setting::first();
-            }
+            },
         ];
     }
 
-    private function getNavigationItems() {
+    private function getNavigationItems()
+    {
         return Navigation::with('categories')->orderBy('position')->get();
     }
 }

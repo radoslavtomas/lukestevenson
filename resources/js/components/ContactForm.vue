@@ -199,9 +199,8 @@ const handleForm = async () => {
             </span>
         </label>
         <p class="mb-4 text-xs text-gray-400" v-if="form.reason === 'therapy'">
-            This is just so I can have some understanding of your needs
-            please do not share anything that you are not comfortable to
-            share.
+            This is just so I can have some understanding of your needs please
+            do not share anything that you are not comfortable to share.
         </p>
 
         <label class="mb-4 block">

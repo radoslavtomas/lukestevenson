@@ -8,10 +8,9 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up(): void {
+    public function up(): void
+    {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('page_id')->nullable();
@@ -26,10 +25,9 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down(): void {
+    public function down(): void
+    {
         Schema::dropIfExists('categories');
     }
 };

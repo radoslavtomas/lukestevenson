@@ -19,8 +19,8 @@ class PagesController extends Controller
             'page' => [
                 'name' => $page['name'],
                 'title' => $page['title'],
-                'body' => $page['body']
-            ]
+                'body' => $page['body'],
+            ],
         ]);
     }
 
@@ -37,8 +37,8 @@ class PagesController extends Controller
             'page' => [
                 'name' => $page['name'],
                 'title' => $page['title'],
-                'body' => $page['body']
-            ]
+                'body' => $page['body'],
+            ],
         ]);
     }
 
@@ -50,8 +50,8 @@ class PagesController extends Controller
             'page' => [
                 'name' => $page['name'],
                 'title' => $page['page']['title'],
-                'body' => $page['page']['body']
-            ]
+                'body' => $page['page']['body'],
+            ],
         ]);
     }
 
@@ -63,8 +63,8 @@ class PagesController extends Controller
             'page' => [
                 'name' => $page['name'],
                 'title' => $page['page']['title'],
-                'body' => $page['page']['body']
-            ]
+                'body' => $page['page']['body'],
+            ],
         ]);
     }
 }
