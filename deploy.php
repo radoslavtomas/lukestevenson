@@ -4,7 +4,7 @@ namespace Deployer;
 require 'recipe/laravel.php';
 
 // Config
-set('repository', 'git@github.com:radoslavtomas/luke-therapy.git');
+set('repository', 'git@github.com:radoslavtomas/lukestevenson.git');
 set('keep_releases', 2);
 set ('ssh_multiplexing', false);
 set('git_tty', false);
@@ -17,7 +17,7 @@ add('writable_dirs', []);
 host('dev')
     ->set('hostname', '139.177.183.107')
     ->set('remote_user', 'deployer')
-    ->set('deploy_path', '/var/www/html/luke-therapy')
+    ->set('deploy_path', '/var/www/html/luke')
     ->set('branch', 'main');
 
 // Hooks
